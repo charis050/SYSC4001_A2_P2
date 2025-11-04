@@ -7,7 +7,7 @@
 #include <sys/sem.h>
 #include <sys/ipc.h>
 
-#include "process.h"
+#include "process_101182048_101297742.h"
 
 shared_data *accessSharedMemory()
 {
