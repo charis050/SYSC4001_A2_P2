@@ -46,7 +46,7 @@ int main(void)
     // wait on the semaphore until it is available then take it
     waitSemaphore(sem_id);
 
-    // Create pointer to shared memory object, exit the program with failure if it returns an Error Code
+    // create pointer to shared memory object, exit the program with failure if it returned '-1' from createSharedMem()
     shared_data *ptr_to_mem = accessSharedMemory();
     if (ptr_to_mem == (shared_data *)-1)
     {
@@ -56,9 +56,7 @@ int main(void)
     // signal the semaphore to release it so another process can take it
     signalSemaphore(sem_id);
 
-    // infite loop that will decrement p2_counter by 1 each loop and will print:
-    // "Process 2 Cycle #: x <--> is a multiple of 3" if p2_counter is multiple of 3, OR:
-    // "Process 2 Cycle: x" if p2_counter is not a multiple of 3
+    // inifinite loop to print the process count 
     while (1)
     {
         // when p2_counter reaches under 500, exit program
